@@ -1,10 +1,16 @@
 "use client"
 import Image from "next/image"
 import Link from "next/link"
+import Header from "./header"
 
 export default function Hero() {
   return (
     <>
+      {/* Header Section */}
+      <div className="absolute top-0 left-0 w-full z-50">
+        <Header />
+      </div>
+
       {/* Hero Video Section */}
       <section className="relative w-full h-screen overflow-hidden font-poppins">
         {/* Background Video */}
@@ -36,7 +42,7 @@ export default function Hero() {
               backgroundImage: "linear-gradient(244deg, rgba(0, 123, 189, 0.96), rgba(0, 63, 97, 0.96))",
             }}
           >
-            <p className="font-semibold highlight-hover">
+            <p className="font-semibold font-ubuntu highlight-hover hover:text-black transition-colors duration-100">
               Capgemini becomes an Official Partner of the Tour de France
             </p>
           </div>
@@ -59,40 +65,41 @@ export default function Hero() {
           {/* Text Block*/}
             <div className="order-2 md:order-1 relative z-10 mt-0 sm:mt-[-1rem] md:mt-0">
             <div className="bg-white shadow-2xl p-6 sm:p-8 md:p-10 w-full md:absolute md:-left-10 md:top-1/2 md:-translate-y-1/2 md:w-[120%] lg:w-[140%] mx-auto md:mx-0">
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-g</div>ray-900 mb-2">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-900 mb-2">
                 World Wealth Report 2025
               </h2>
               <p className="text-gray-600 mb-4 sm:mb-6">Sail the great wealth transfer</p>
-              <Link
-  href="#"
-  className="
-    group relative inline-flex items-center 
-    px-4 sm:px-6 py-2 
-    rounded-full border border-gray-900 
-    text-gray-900 font-medium 
-    overflow-hidden transition-all duration-300 ease-in-out 
-    transform group-hover:scale-105 
-    group-hover:border-blue-200
-  "
->
-  {/* Background fill animation */}
-  <span
-    className="
-      absolute inset-0 
-      w-0 group-hover:w-full 
-      bg-blue-200 
-      rounded-full 
-      transition-all duration-500 ease-out 
-      z-0
-    "
-  />
+              <div className="flex justify-end">
+                <Link
+                  href="#"
+                  className="
+                    group relative inline-flex items-center 
+                    px-4 sm:px-6 py-2 
+                    rounded-full border border-gray-900 
+                    text-gray-900 font-medium 
+                    overflow-hidden transition-all duration-300 ease-in-out 
+                    transform group-hover:scale-105 
+                    group-hover:border-blue-200
+                  "
+                >
+                  {/* Background fill animation */}
+                  <span
+                    className="
+                      absolute inset-0 
+                      w-0 group-hover:w-full 
+                      bg-teal-300  
+                      rounded-full 
+                      transition-all duration-500 ease-out 
+                      z-0
+                    "
+                  />
 
-  {/* Text on top */}
-  <span className="relative z-10 transition-colors duration-300 group-hover:text-black">
-    Read more <span className="ml-2">→</span>
-  </span>
-</Link>
-
+                  {/* Text on top */}
+                  <span className="relative z-10 transition-colors duration-300 group-hover:text-black">
+                    Read more <span className="ml-2">→</span>
+                  </span>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -135,7 +142,7 @@ export default function Hero() {
     <div className="relative z-10 order-1 md:order-2 hidden md:block">
       <div className="bg-white shadow-xl p-4 sm:p-5 w-full md:w-[110%] lg:w-[90%] -mt-6 sm:-mt-8 md:-mt-0 md:-ml-10 lg:-ml-20 xl:-ml-32">
         <p className="text-xs font-extralight mb-2 sm:mb-3 px-3 sm:px-5">- Capgemini Research Institute</p>
-        <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-gray-900 mb-2 sm:mb-3 px-3 sm:px-5 highlight-hover">
+        <h3 className="md:text-xl lg:text-2xl font-semibold text-gray-900 mb-2 sm:mb-3 px-3 sm:px-5 highlight-hover">
           Global youth and sustainability
         </h3>
         <Link href="#" className="text-blue-600 px-3 sm:px-5 text-xs sm:text-sm">
@@ -206,7 +213,7 @@ export default function Hero() {
         className="
           absolute inset-0 
           w-0 group-hover:w-full 
-          bg-blue-200 
+          bg-teal-300   
           rounded-full 
           transition-all duration-500 ease-out 
           z-0
@@ -278,7 +285,7 @@ export default function Hero() {
             className="
               absolute inset-0
               w-0 group-hover:w-full
-              bg-blue-200
+              bg-teal-300 
               rounded-full
               transition-all duration-500 ease-out
               z-0
@@ -315,7 +322,7 @@ export default function Hero() {
           className="
             absolute inset-0
             w-0 group-hover:w-full
-            bg-blue-200
+            bg-teal-300
             rounded-full
             transition-all duration-500 ease-out
             z-0
@@ -388,22 +395,22 @@ export default function Hero() {
           <div className="mt-6 sm:mt-8 md:mt-10 ">
             <button
               className="
-      group relative inline-flex items-center 
-      px-4 sm:px-6 py-2 
-      rounded-full border border-black 
-      text-black text-sm font-medium 
-      overflow-hidden transition-all duration-300 hover:border-blue-400
-    "
+                group relative inline-flex items-center 
+                px-4 sm:px-6 py-2 
+                rounded-full border border-black 
+                text-black text-sm font-medium 
+                overflow-hidden transition-all duration-300 hover:border-blue-400
+              "
             >
               <span
                 className="
-        absolute inset-0 
-        bg-blue-400 
-        w-0 group-hover:w-full 
-        transition-all duration-500 ease-out 
-        rounded-full 
-        z-0
-      "
+                  absolute inset-0 
+                  bg-teal-300 
+                  w-0 group-hover:w-full 
+                  transition-all duration-500 ease-out 
+                  rounded-full 
+                  z-0
+                "
               />
 
               {/* Button content above animation */}
@@ -502,7 +509,7 @@ export default function Hero() {
         className="
           absolute inset-0 
           w-0 group-hover:w-full 
-          bg-blue-400 
+          bg-teal-300 
           rounded-full 
           transition-all duration-500 ease-out 
           z-0
