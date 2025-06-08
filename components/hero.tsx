@@ -42,9 +42,21 @@ export default function Hero() {
               backgroundImage: "linear-gradient(244deg, rgba(0, 123, 189, 0.96), rgba(0, 63, 97, 0.96))",
             }}
           >
-            <p className="font-semibold font-ubuntu highlight-hover hover:text-black transition-colors duration-100">
-              Capgemini becomes an Official Partner of the Tour de France
-            </p>
+            <div className="relative group inline-block">
+              <span
+                className="
+                  absolute inset-0 left-0 top-0 h-full w-0 
+                  bg-teal-400 
+                  transition-all duration-400 ease-out 
+                  group-hover:w-full 
+                  z-0
+                "
+                aria-hidden="true"
+              />
+              <p className="relative z-10 font-semibold font-ubuntu highlight-hover hover:text-black transition-colors duration-200">
+                Capgemini becomes an Official Partner of the Tour de France
+              </p>
+            </div>
           </div>
         </div>
       </section>
