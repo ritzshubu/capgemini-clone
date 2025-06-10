@@ -46,6 +46,7 @@ export default function Header() {
       transition: "background-color 0.2s, padding 0.3s",
       paddingTop: isScrolled ? "0" : "1rem",
       paddingBottom: isScrolled ? "0" : "1rem",
+      boxShadow: isScrolled || menuOpen ? "0 1px 2px rgba(0, 0, 0, 0.1)" : "none",
       }}
     >
       <div className="max-w-screen-2xl mx-auto px-4 lg:px-8">
@@ -55,20 +56,20 @@ export default function Header() {
         className={`
           flex transition-all duration-300 ease-in-out
           ${isScrolled ? "opacity-0 translate-x-8 -translate-y-4 pointer-events-none" : "opacity-100 translate-x-0 translate-y-0"}
-          text-[16px] font-medium font-ubuntu space-x-6 items-center
+          text-[15px] font-medium space-x-6 items-center
           ${menuOpen || isScrolled ? "text-gray-900" : "text-white"}
         `}
-        style={{ willChange: "opacity, transform", letterSpacing: "1px" }}
+        style={{ willChange: "opacity, transform", letterSpacing: "1px", fontFamily: 'Ubuntu', }}
       >
         {topRightItems.map((item, index) => (
         <Link
           key={index}
           href={item.href}
-          className="relative group flex items-center space-x-1 transition-colors hover:text-aqua-600"
+          className="relative group flex items-center space-x-1 transition-colors hover:text-[#0070ad]"
         >
           <span className="relative">
         {item.label}
-        <span className="absolute left-0 -bottom-0.5 h-[2px] w-full bg-aqua-600 opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100 transition-all duration-300 origin-left block"></span>
+        <span className="absolute right-0 -bottom-0.5 h-[2px] w-0 bg-aqua-600 opacity-0 group-hover:opacity-100 group-hover:w-full group-hover:right-0 transition-all duration-300 origin-right block"></span>
           </span>
           {item.external && <span className="text-xs">↗</span>}
         </Link>
@@ -82,7 +83,7 @@ export default function Header() {
         style={{
           paddingLeft: "12px",
           paddingRight: "12px",
-          transform: "translateY(-8px)",
+          transform: "translateY(-10px)",
         }}
       >
       {/* Logo + Nav */}
@@ -101,22 +102,22 @@ export default function Header() {
         />
       </Link>
 
-      <nav className={`hidden lg:flex space-x-8 text-[16px] font-medium transition-colors duration-200 ${isScrolled || menuOpen ? "text-gray-900" : "text-white"}`} style={{ fontFamily: 'Ubuntu' }}>
+      <nav className={`hidden lg:flex space-x-8 text-[15px] font-medium transition-colors duration-200 ${isScrolled || menuOpen ? "text-gray-900" : "text-white"}`} style={{ fontFamily: 'Ubuntu' }}>
         {navItems.map((item, index) => (
-          <Link
+            <Link
             key={index}
             href="#"
-            className="relative group transition-colors hover:text-blue-500"
-          >
+            className="relative group transition-colors hover:text-[#0070ad]"
+            >
             <span>{item}</span>
-            <span className="absolute left-0 -bottom-0.5 h-[2px] w-full bg-blue-500 opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100 transition-all duration-300 origin-left" />
-          </Link>
+            <span className="absolute left-0 -bottom-0.5 h-[2px] w-full bg-[#0070ad] opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100 transition-all duration-300 origin-left" />
+            </Link>
         ))}
       </nav>
       </div>
 
       {/* Search Icon */}
-      <div className={`cursor-pointer hidden lg:flex items-center text-sm font-medium text-[16px] space-x-3 duration-200 ${isScrolled || menuOpen ? "text-gray-900" : "text-white"}`} style={{ fontFamily: 'Ubuntu' }}>
+      <div className={`cursor-pointer hidden lg:flex items-center text-sm font-medium text-[15px] space-x-3 duration-200 ${isScrolled || menuOpen ? "text-gray-900" : "text-white"}`} style={{ fontFamily: 'Ubuntu' }}>
       <span className="cursor-pointer">Search</span>
       <img
         src={
@@ -141,12 +142,12 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {menuOpen && (
-      <div className="lg:hidden py-4 border-t text-sm font-medium text-gray-800 space-y-3 bg-white">
+      <div className="lg:hidden py-4 border-t text-sm font-medium text-gray-900 space-y-3 bg-white">
       {navItems.map((item, index) => (
         <Link
         key={index}
         href="#"
-        className="block px-2 py-1 hover:text-blue-700"
+        className="block px-2 py-1 hover:text-[#0070ad]"
         >
         {item}
         </Link>
@@ -156,7 +157,7 @@ export default function Header() {
         <Link
         key={index}
         href={item.href}
-        className="block px-2 py-1 hover:text-blue-700"
+        className="block px-2 py-1 hover:text-[#0070ad]"
         >
         {item.label} {item.external && "↗"}
         </Link>

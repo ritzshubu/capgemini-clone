@@ -40,21 +40,44 @@ export default function Hero() {
             "
             style={{
               backgroundImage: "linear-gradient(244deg, rgba(0, 123, 189, 0.96), rgba(0, 63, 97, 0.96))",
+              borderRadius: "4px",
+              marginTop: "280px",
+              marginLeft: "34px",
+              height: "300px",
             }}
           >
             <div className="relative group inline-block">
               <span
                 className="
-                  absolute inset-0 left-0 top-0 h-full w-0 
-                  bg-teal-400 
-                  transition-all duration-400 ease-out 
-                  group-hover:w-full 
+                  absolute inset-0 left-0 top-0 h-full w-0  
                   z-0
                 "
                 aria-hidden="true"
               />
-              <p className="relative z-10 font-semibold font-ubuntu highlight-hover hover:text-black transition-colors duration-200">
-                Capgemini becomes an Official Partner of the Tour de France
+              <p className="relative z-10 font-semibold text-[40px] highlight-hover hover:text-black transition-colors duration-200"
+               style={{ 
+                fontFamily: 'Ubuntu',
+                marginTop: "3rem",
+                marginLeft:"-1rem"
+               }}
+               >
+                <a 
+                  style={{
+                      background: "linear-gradient(to right, #00E6E3 0%, #00E6E3 100%) no-repeat 0px 100% / 0px 100%",
+                      transition: "all .2s ease-in-out",
+                      fontWeight: "1000",
+                      fontSize: "2.5rem",
+                      lineHeight: "48px",
+                  }}
+                  onMouseEnter={(e) => {
+                  (e.target as HTMLElement).style.backgroundSize = "100% 100%";
+                  }}
+                  onMouseLeave={(e) => {
+                  (e.target as HTMLElement).style.backgroundSize = "0px 100%";
+                  }}
+                >
+                  Capgemini becomes an Official Partner of the Tour de France
+                </a>
               </p>
             </div>
           </div>
