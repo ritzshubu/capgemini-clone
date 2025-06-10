@@ -36,15 +36,16 @@ export default function Header() {
 
   return (
     <header
-      className={`w-full fixed top-0 z-50 py-3 transition-colors duration-100 ${
+      className={`w-full fixed top-0 z-50 py-3 transition-all duration-300 ${
       isScrolled || menuOpen ? "bg-white" : "bg-transparent"
       }`}
       onMouseEnter={() => setMenuOpen(true)}
       onMouseLeave={() => setMenuOpen(false)}
       style={{
-      backgroundColor:
-        isScrolled || menuOpen ? "#fff" : undefined,
-      transition: "background-color 0.1s",
+      backgroundColor: isScrolled || menuOpen ? "#fff" : undefined,
+      transition: "background-color 0.2s, padding 0.3s",
+      paddingTop: isScrolled ? "0" : "1rem",
+      paddingBottom: isScrolled ? "0" : "1rem",
       }}
     >
       <div className="max-w-screen-2xl mx-auto px-4 lg:px-8">
@@ -76,20 +77,31 @@ export default function Header() {
       </div>
 
       {/* Main Header */}
-      <div className="flex items-center justify-between py-3">
+      <div
+        className="flex items-center justify-between py-3"
+        style={{
+          paddingLeft: "12px",
+          paddingRight: "12px",
+          transform: "translateY(-8px)",
+        }}
+      >
       {/* Logo + Nav */}
       <div className="flex items-center gap-12">
       <Link href="/">
         <Image
-        src="https://www.capgemini.com/wp-content/themes/capgemini2020/assets/images/logo.svg"
-        alt="Capgemini Logo"
-        width={180}
-        height={45}
-        priority
+          src={
+        isScrolled || menuOpen
+          ? "https://www.capgemini.com/wp-content/themes/capgemini2020/assets/images/logo.svg"
+          : "https://www.capgemini.com/wp-content/themes/capgemini2020/assets/images/logo-white.svg"
+          }
+          alt="Capgemini Logo"
+          width={180}
+          height={45}
+          priority
         />
       </Link>
 
-      <nav className={`hidden lg:flex space-x-8 text-[16px] font-medium font-ubuntu transition-colors duration-100 ${isScrolled || menuOpen ? "text-gray-900" : "text-white"}`}>
+      <nav className={`hidden lg:flex space-x-8 text-[16px] font-medium transition-colors duration-200 ${isScrolled || menuOpen ? "text-gray-900" : "text-white"}`} style={{ fontFamily: 'Ubuntu' }}>
         {navItems.map((item, index) => (
           <Link
             key={index}
@@ -104,10 +116,14 @@ export default function Header() {
       </div>
 
       {/* Search Icon */}
-      <div className="cursor-pointer hidden lg:flex items-center text-sm font-medium text-gray-800 space-x-3">
+      <div className={`cursor-pointer hidden lg:flex items-center text-sm font-medium text-[16px] space-x-3 duration-200 ${isScrolled || menuOpen ? "text-gray-900" : "text-white"}`} style={{ fontFamily: 'Ubuntu' }}>
       <span className="cursor-pointer">Search</span>
       <img
-        src="https://img.icons8.com/ios/20/search--v1.png"
+        src={
+          isScrolled || menuOpen
+          ? "https://www.capgemini.com/wp-content/themes/capgemini2020/assets/images/icon-search-dark.svg"
+          : "https://www.capgemini.com/wp-content/themes/capgemini2020/assets/images/icon-search-white.svg"
+          }
         alt="Search"
         className="w-4 h-4"
       />

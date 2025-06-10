@@ -1,9 +1,16 @@
 @import "tailwindcss";
 
 html, body {
-  font-family: 'sans', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
 }
 
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('https://www.capgemini.com/wp-content/themes/capgemini2020/assets/fonts/Ubuntu-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
 
 .highlight-hover {
   position: relative;
