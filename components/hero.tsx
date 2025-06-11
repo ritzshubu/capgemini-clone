@@ -54,20 +54,21 @@ export default function Hero() {
                 "
                 aria-hidden="true"
               />
-              <p className="relative z-10 font-semibold text-[40px] highlight-hover hover:text-black transition-colors duration-200"
-               style={{ 
-                fontFamily: 'Ubuntu',
-                marginTop: "3rem",
-                marginLeft:"-1rem"
-               }}
-               >
+                <p 
+                className="relative z-10  text-[40px] highlight-hover hover:text-black transition-colors duration-300 group"
+                style={{ 
+                  fontFamily: 'Ubuntu',
+                  marginTop: "3rem",
+                  marginLeft:"-1rem"
+                }}
+                >
                 <a 
                   style={{
-                      background: "linear-gradient(to right, #00E6E3 0%, #00E6E3 100%) no-repeat 0px 100% / 0px 100%",
-                      transition: "all .2s ease-in-out",
-                      fontWeight: "1000",
-                      fontSize: "2.5rem",
-                      lineHeight: "48px",
+                    background: "linear-gradient(to right, #00E6E3 0%, #00E6E3 100%) no-repeat 0px 100% / 0px 100%",
+                    transition: "all .2s ease-in-out",
+                    fontWeight: "1000",
+                    fontSize: "2.5rem",
+                    lineHeight: "48px",
                   }}
                   onMouseEnter={(e) => {
                   (e.target as HTMLElement).style.backgroundSize = "100% 100%";
@@ -75,6 +76,7 @@ export default function Hero() {
                   onMouseLeave={(e) => {
                   (e.target as HTMLElement).style.backgroundSize = "0px 100%";
                   }}
+                  className="group-hover:bg-[length:100%_100%] group-hover:transition-all"
                 >
                   Capgemini becomes an Official Partner of the Tour de France
                 </a>
@@ -87,23 +89,27 @@ export default function Hero() {
       <section className="w-full px-4 py-8 bg-white font-poppins">
         <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center p-4 sm:p-6 md:p-10 gap-6 sm:gap-8 md:gap-16 relative">
           {/* Image Block (Right Side) */}
-          <div className="relative w-full h-64 md:h-80 lg:h-[360px] overflow-hidden group order-1 md:order-2 mx-auto md:mr-0 md:ml-auto md:w-[90%] border-2 border-black hover:border-none">
+            <div className="relative w-[540px] h-[343px] overflow-hidden group order-1 md:order-2 mx-auto md:mr-0 md:ml-auto hover:border-none">
             <Image
               src="/assets/sailor.webp"
               alt="Sailing Wealth"
-              fill
-              className="object-cover transform transition-transform duration-500 group-hover:scale-105"
+              width={540}
+              height={343}
+              className="object-cover transform transition-transform duration-500 group-hover:scale-120"
               priority
             />
-          </div>
+            </div>
 
           {/* Text Block*/}
-            <div className="order-2 md:order-1 relative z-10 mt-0 sm:mt-[-1rem] md:mt-0">
+            <div className="order-2 md:order-1 relative w-[540px] h-[343px] z-10 mt-0 sm:mt-[-1rem] md:mt-0">
             <div className="bg-white shadow-2xl p-6 sm:p-8 md:p-10 w-full md:absolute md:-left-10 md:top-1/2 md:-translate-y-1/2 md:w-[120%] lg:w-[140%] mx-auto md:mx-0">
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-900 mb-2">
+                <h2 
+                className="text-xl sm:text-2xl md:text-3xl text-gray-900 mb-2"
+                style={{ fontFamily: "Ubuntu", fontSize: "24px" }}
+                >
                 World Wealth Report 2025
-              </h2>
-              <p className="text-gray-600 mb-4 sm:mb-6">Sail the great wealth transfer</p>
+                </h2>
+              <p className="text-gray-600 mb-4 sm:mb-6" style={{ fontFamily: "Ubuntu", fontSize: "16px" }}>Sail the great wealth transfer</p>
               <div className="flex justify-end">
                 <Link
                   href="#"
@@ -141,8 +147,8 @@ export default function Hero() {
       </section>
 
       {/* Insights */}
-<section className="w-full px-4 py-8 sm:py-12 bg-white">
-  <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900 text-center mb-6 sm:mb-8">
+<section className="w-full px-4 py-8 sm:py-12 bg-white" style={{ fontFamily: "Ubuntu"}}>
+  <h1 className="text-2xl sm:text-3xl lg:text-[32px] text-gray-900 mb-6 sm:mb-8" style={{ fontFamily: "Ubuntu", fontSize: "24px", marginLeft: "5.5rem" }}>
     Latest insights
   </h1>
 
@@ -163,11 +169,25 @@ export default function Hero() {
           className="absolute left-1/2 transform -translate-x-1/2 w-[90%] bg-white p-4 sm:p-5 z-20 md:hidden shadow-2xl"
           style={{ bottom: '-2.5rem' }} // Move further below from 0 for small devices
         >
-          <p className="text-xs font-extralight mb-2 sm:mb-3">- Capgemini Research Institute</p>
-          <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 sm:mb-3 highlight-hover">
+          <p className="text-xs font-extralight mb-2 sm:mb-3" style={{ fontFamily: "Ubuntu"}}>- Capgemini Research Institute</p>
+            <h3
+            className="text-lg sm:text-xl text-gray-900 mb-2 sm:mb-3 highlight-hover"
+            style={{
+              fontFamily: "Ubuntu",
+              background: "linear-gradient(to right, #00E6E3 0%, #00E6E3 100%) no-repeat 0px 100% / 0px 100%",
+              transition: "background-size 0.3s ease-in-out",
+              backgroundSize: "0% 100%",
+            }}
+            onMouseEnter={(e) => {
+              (e.target as HTMLElement).style.backgroundSize = "100% 100%";
+            }}
+            onMouseLeave={(e) => {
+              (e.target as HTMLElement).style.backgroundSize = "0% 100%";
+            }}
+            >
             Global youth and sustainability
-          </h3>
-          <Link href="#" className="text-blue-600 text-xs sm:text-sm">
+            </h3>
+          <Link href="#" className="text-[#0070ad] text-xs sm:text-sm">
             CAPGEMINI RESEARCH INSTITUTE
           </Link>
         </div>
@@ -177,7 +197,7 @@ export default function Hero() {
     <div className="relative z-10 order-1 md:order-2 hidden md:block">
       <div className="bg-white shadow-xl p-4 sm:p-5 w-full md:w-[110%] lg:w-[90%] -mt-6 sm:-mt-8 md:-mt-0 md:-ml-10 lg:-ml-20 xl:-ml-32">
         <p className="text-xs font-extralight mb-2 sm:mb-3 px-3 sm:px-5">- Capgemini Research Institute</p>
-        <h3 className="md:text-xl lg:text-2xl font-semibold text-gray-900 mb-2 sm:mb-3 px-3 sm:px-5 highlight-hover">
+        <h3 className="md:text-xl lg:text-2xl  text-gray-900 mb-2 sm:mb-3 px-3 sm:px-5 highlight-hover">
           Global youth and sustainability
         </h3>
         <Link href="#" className="text-blue-600 px-3 sm:px-5 text-xs sm:text-sm">
@@ -194,10 +214,10 @@ export default function Hero() {
     {/* Left - Blue Card */}
     <div className="bg-[#0071b9] text-white w-full sm:max-w-[400px] p-6 md:p-10 h-full flex flex-col justify-between min-h-[250px] mx-auto sm:ml-0 md:ml-10 lg:ml-20 relative z-10 order-2 md:order-1">
       <p className="text-sm mb-4">— Capgemini Research Institute</p>
-      <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold leading-snug mb-4 highlight-hover">
+      <h2 className="text-xl sm:text-2xl lg:text-3xl  leading-snug mb-4 highlight-hover">
         Driving business value with AI agents: A conversation with Dr Walter Sun
       </h2>
-      <Link href="#" className="text-sm mt-auto font-semibold">
+      <Link href="#" className="text-sm mt-auto ">
         CAPGEMINI RESEARCH INSTITUTE
       </Link>
     </div>
@@ -264,7 +284,7 @@ export default function Hero() {
 
 
  <section className="w-full py-8 sm:py-12 bg-white">
-  <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900 text-center mb-6 sm:mb-8 px-4 max-w-screen-xl mx-auto">
+  <h1 className="text-2xl sm:text-3xl md:text-4xl  text-gray-900 text-center mb-6 sm:mb-8 px-4 max-w-screen-xl mx-auto">
     Recent Client Stories
   </h1>
 
@@ -296,7 +316,7 @@ export default function Hero() {
 
       {/* Overlay content on image */}
       <div className="hidden md:block absolute bottom-0 left-16 bg-white shadow-xl w-[450px] p-8 z-30">
-        <h3 className="text-2xl text-gray-900 mb-4 font-semibold">
+        <h3 className="text-2xl text-gray-900 mb-4 ">
           ABN AMRO adopts a future-focused approach to Gen AI development
         </h3>
         <p className="text-base font-light mb-6">
@@ -334,7 +354,7 @@ export default function Hero() {
     </div>
 
     <div className="block md:hidden mt-6 bg-white shadow-xl black p-6 max-w-screen-xl mx-auto w-full">
-      <h3 className="text-xl text-gray-900 mb-3 font-semibold highlight-hover">
+      <h3 className="text-xl text-gray-900 mb-3  highlight-hover">
         ABN AMRO adopts a future-focused approach to Gen AI development
       </h3>
       <p className="text-sm font-light mb-4">
@@ -376,7 +396,7 @@ export default function Hero() {
       {/* Latest news */}
       <section className="w-full px-4 sm:px-6 md:px-10 py-8 sm:py-12 bg-white">
         <div className="max-w-screen-xl mx-auto md:px-18 px-4">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900 mb-6 sm:mb-8">Latest news</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl  text-gray-900 mb-6 sm:mb-8">Latest news</h2>
 
           <div
             className="grid grid-cols-1 md:grid-cols-[30%_60%] sm:gap-8 md:gap-10"
@@ -522,7 +542,7 @@ export default function Hero() {
   {/* Left: Text Block */}
   <div className="relative z-10 w-full md:w-1/2 bg-[#0066A1] text-white px-6 sm:px-10 md:px-16 pt-10 pb-16 flex flex-col justify-between">
     <div className="space-y-4">
-      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold leading-snug">
+      <h2 className="text-2xl sm:text-3xl lg:text-4xl  leading-snug">
         Discover our 2024 Integrated Annual Report
       </h2>
       <p className="text-base sm:text-lg font-light">
