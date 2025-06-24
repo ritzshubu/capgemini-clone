@@ -1,30 +1,30 @@
-import { useState, useEffect } from "react"
-import Image from "next/image"
-import Link from "next/link"
+import { useState, useEffect } from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 type ClientStory = {
-  image: string
-  heading: string
-  paragraph: string
-  link: string
-}
+  image: string;
+  heading: string;
+  paragraph: string;
+  link: string;
+};
 
 export default function ClientStoriesSlider() {
-  const [stories, setStories] = useState<ClientStory[]>([])
-  const [current, setCurrent] = useState(0)
+  const [stories, setStories] = useState<ClientStory[]>([]);
+  const [current, setCurrent] = useState(0);
 
   useEffect(() => {
     fetch("/assets/clientStories.json")
       .then((res) => res.json())
-      .then((data) => setStories(data))
-  }, [])
+      .then((data) => setStories(data));
+  }, []);
 
-  if (stories.length === 0) return <div>Loading...</div>
+  if (stories.length === 0) return <div>Loading...</div>;
 
-  const total = stories.length
-  const prev = () => setCurrent((c) => (c === 0 ? total - 1 : c - 1))
-  const next = () => setCurrent((c) => (c === total - 1 ? 0 : c + 1))
-  const story = stories[current]
+  const total = stories.length;
+  const prev = () => setCurrent((c) => (c === 0 ? total - 1 : c - 1));
+  const next = () => setCurrent((c) => (c === total - 1 ? 0 : c + 1));
+  const story = stories[current];
 
   return (
     <div className="relative flex flex-col md:flex-row md:items-stretch w-full">
@@ -63,12 +63,8 @@ export default function ClientStoriesSlider() {
           </button>
         </div>
         <div className="hidden md:block absolute bottom-0 left-16 bg-white shadow-xl w-[450px] p-8 z-30">
-          <h3 className="text-2xl text-gray-900 mb-4 ">
-            {story.heading}
-          </h3>
-          <p className="text-base font-light mb-6">
-            {story.paragraph}
-          </p>
+          <h3 className="text-2xl text-gray-900 mb-4 ">{story.heading}</h3>
+          <p className="text-base font-light mb-6">{story.paragraph}</p>
           <Link
             href={story.link}
             className="
@@ -102,9 +98,7 @@ export default function ClientStoriesSlider() {
         <h3 className="text-xl text-gray-900 mb-3  highlight-hover">
           {story.heading}
         </h3>
-        <p className="text-sm font-light mb-4">
-          {story.paragraph}
-        </p>
+        <p className="text-sm font-light mb-4">{story.paragraph}</p>
         <Link
           href={story.link}
           className="
@@ -134,5 +128,5 @@ export default function ClientStoriesSlider() {
         </Link>
       </div>
     </div>
-  )
+  );
 }
