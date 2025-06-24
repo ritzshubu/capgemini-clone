@@ -100,7 +100,7 @@ export default function Header() {
 
         {/* Main Header */}
         <div
-          className="flex items-center justify-between py-3"
+          className="w-full flex items-center justify-between py-3"
           style={{
             paddingLeft: "12px",
             paddingRight: "12px",
