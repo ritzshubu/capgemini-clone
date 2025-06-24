@@ -124,10 +124,11 @@ export default function Header() {
             </Link>
 
             <nav
-              className=
-              {`hidden lg:flex space-x-8 text-[15px] font-medium transition-colors duration-200 ${isScrolled || menuOpen ? "text-gray-900" : "text-white"}`} 
-              style={{ fontFamily: 'Ubuntu' }}
-              >
+              className={`hidden lg:flex space-x-8 text-[15px] font-medium transition-colors duration-200 ${
+                isScrolled || menuOpen ? "text-gray-900" : "text-white"
+              }`}
+              style={{ fontFamily: "Ubuntu" }}
+            >
               {navItems.map((item, index) => (
                 <div
                   key={index}
@@ -149,13 +150,14 @@ export default function Header() {
                       <div className="w-1/3 pr-6 border-r">
                         <h4 className="font-bold text-lg mb-2">Insights</h4>
                         <p className="text-sm text-gray-600">
-                          Explore our latest thought leadership, ideas, and insights.
+                          Explore our latest thought leadership, ideas, and
+                          insights.
                         </p>
                       </div>
                       {/* Right Options */}
-                        <div className="grid gap-3 text-sm">
+                      <div className="grid gap-3 text-sm">
                         {item.dropdown.map((option, idx) => (
-                            <Link
+                          <Link
                             key={idx}
                             href="#"
                             className="hover:text-[#0070ad] transition-colors"
@@ -171,12 +173,10 @@ export default function Header() {
                               columnGap: 0,
                               height: "100%",
                             }}
-                            >
+                          >
                             {option}
-                            <span
-                              className="absolute left-0 -bottom-0.5 h-[2px] w-full bg-[#0070ad] opacity-0 scale-x-0 hover:opacity-100 hover:scale-x-100 transition-all duration-300 origin-left"
-                            ></span>
-                            </Link>
+                            <span className="absolute left-0 -bottom-0.5 h-[2px] w-full bg-[#0070ad] opacity-0 scale-x-0 hover:opacity-100 hover:scale-x-100 transition-all duration-300 origin-left"></span>
+                          </Link>
                         ))}
                       </div>
                     </div>

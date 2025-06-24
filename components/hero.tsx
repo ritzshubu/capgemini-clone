@@ -1,7 +1,8 @@
-"use client"
-import Image from "next/image"
-import Link from "next/link"
-import Header from "./header"
+"use client";
+import Image from "next/image";
+import Link from "next/link";
+import Header from "./header";
+import ClientStoriesSlider from "./clientStories";
 
 export default function Hero() {
   return (
@@ -13,7 +14,11 @@ export default function Hero() {
 
       {/* Hero Section */}
       <section className=" top-0 left-0 w-full h-screen bg-white">
-        <img src="/assets/DigitalBanner.webp" alt="bg" className="absolute inset-0 w-full h-2/3 lg:h-full object-cover" />
+        <img
+          src="/assets/DigitalBanner.webp"
+          alt="bg"
+          className="absolute inset-0 w-full h-2/3 lg:h-full object-cover"
+        />
         {/* Overlay Content Card */}
         <div
           className="
@@ -25,23 +30,21 @@ export default function Hero() {
     h-[300px]
     bg-gradient-to-br from-[#007bbdE6] to-[#003f61E6]
     rounded-md shadow-2xs
-    p-[32px] 
+    p-[32px]
     z-10
     flex flex-col justify-center gap-4
   "
         >
-
-
           <h1
             className="
-    text-3xl sm:text-3xl md:text-4xl 
-    text-white 
-    text-[clamp(2rem, 4vw, 4rem)] 
-    font-bold mb-4 
+    text-3xl sm:text-3xl md:text-4xl
+    text-white
+    text-[clamp(2rem, 4vw, 4rem)]
+    font-bold mb-4
     transition-all duration-300
     group relative inline-block
   "
-            style={{ fontFamily: 'Ubuntu' }}
+            style={{ fontFamily: "Ubuntu" }}
           >
             <span
               className="
@@ -52,7 +55,8 @@ export default function Hero() {
               style={{
                 background:
                   "linear-gradient(to right, #00E6E3 0%, #00E6E3 100%) no-repeat 0px 100% / 0px 100%",
-                transition: "background-size 0.4s ease-in-out, color 0.2s ease-in-out",
+                transition:
+                  "background-size 0.4s ease-in-out, color 0.2s ease-in-out",
               }}
               onMouseEnter={(e) => {
                 (e.target as HTMLElement).style.backgroundSize = "100% 100%";
@@ -65,25 +69,27 @@ export default function Hero() {
             </span>
           </h1>
 
-          <p className="text-md font-medium text-white text-[clamp(1rem, 3vw, 1.5rem)] mb-6" style={{ fontFamily: "Ubuntu" }}>
-            How digital continuity drives business outcomes in aerospace and defense
+          <p
+            className="text-md font-medium text-white text-[clamp(1rem, 3vw, 1.5rem)] mb-6"
+            style={{ fontFamily: "Ubuntu" }}
+          >
+            How digital continuity drives business outcomes in aerospace and
+            defense
           </p>
         </div>
       </section>
 
-
       {/* Technology Convergence */}
       <section className="w-full bg-white font-Ubuntu">
         <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center p-4 sm:p-6 md:p-10 gap-6 sm:gap-8 md:gap-16 relative group">
-
           {/* Image Block (Right Side) */}
           <div
             className="
-        relative 
+        relative
         w-[300px] h-[300px] md:w-[528px] md:h-[380px]
-        overflow-hidden group 
-        order-1 md:order-2 
-        border-2 border-black 
+        overflow-hidden group
+        order-1 md:order-2
+        border-2 border-black
         hover:border-none
         sm:border-none
       "
@@ -124,7 +130,10 @@ export default function Hero() {
               >
                 Technology convergence
               </h2>
-              <p className="text-gray-600 mb-4 sm:mb-6" style={{ fontFamily: "Ubuntu" }}>
+              <p
+                className="text-gray-600 mb-4 sm:mb-6"
+                style={{ fontFamily: "Ubuntu" }}
+              >
                 Exploring the converging nature of today's tech explosion
               </p>
 
@@ -132,20 +141,19 @@ export default function Hero() {
                 <Link
                   href="#"
                   className="
-              group relative inline-flex items-center 
-              px-4 sm:px-6 py-2 
-              rounded-full border border-gray-900 
-              text-gray-900 font-medium 
-              overflow-hidden transition-all duration-300 ease-in-out 
-              transform group-hover:scale-105 
+              group relative inline-flex items-center
+              px-4 sm:px-6 py-2
+              rounded-full border border-gray-900
+              text-gray-900 font-medium
+              overflow-hidden transition-all duration-300 ease-in-out
+              transform group-hover:scale-105
               group-hover:border-blue-200
               "
                 >
-                  <span
-                    className="absolute inset-0 w-0 group-hover:w-full bg-teal-300 rounded-none sm:rounded-full transition-all duration-500 ease-out z-0"
-                  />
+                  <span className="absolute inset-0 w-0 group-hover:w-full bg-teal-300 rounded-none sm:rounded-full transition-all duration-500 ease-out z-0" />
                   <span className="relative z-10 transition-colors duration-300 group-hover:text-black">
-                    <span className="hidden sm:inline">Read more</span> <span className="ml-2">→</span>
+                    <span className="hidden sm:inline">Read more</span>{" "}
+                    <span className="ml-2">→</span>
                   </span>
                 </Link>
               </div>
@@ -154,15 +162,23 @@ export default function Hero() {
         </div>
       </section>
 
-
       {/* Insights */}
-      <section className="w-full px-4 py-8 sm:py-12 bg-white" style={{ fontFamily: "Ubuntu" }}>
-        <h1 className="text-2xl sm:text-3xl lg:text-[32px] text-gray-900 mb-6 sm:mb-8" style={{ fontFamily: "Ubuntu", fontSize: "24px", marginLeft: "5.5rem" }}>
+      <section
+        className="w-full px-4 py-8 sm:py-12 bg-white"
+        style={{ fontFamily: "Ubuntu" }}
+      >
+        <h1
+          className="text-2xl sm:text-3xl lg:text-[32px] text-gray-900 mb-6 sm:mb-8"
+          style={{
+            fontFamily: "Ubuntu",
+            fontSize: "24px",
+            marginLeft: "5.5rem",
+          }}
+        >
           Latest insights
         </h1>
 
         <div className="max-w-screen-xl mx-auto relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[60%_40%] items-center gap-6 md:gap-0">
-
           {/* Image Block */}
           <div className="relative w-full h-64 sm:h-72 md:h-80 lg:h-[400px] overflow-hidden group order-2 md:order-1">
             <Image
@@ -173,17 +189,22 @@ export default function Hero() {
               priority
             />
 
-
             <div
               className="absolute left-1/2 transform -translate-x-1/2 w-[90%] bg-white p-4 sm:p-5 z-20 md:hidden shadow-2xl"
-              style={{ bottom: '-2.5rem' }}
+              style={{ bottom: "-2.5rem" }}
             >
-              <p className="text-xs font-extralight mb-2 sm:mb-3" style={{ fontFamily: "Ubuntu" }}>- Capgemini Research Institute</p>
+              <p
+                className="text-xs font-extralight mb-2 sm:mb-3"
+                style={{ fontFamily: "Ubuntu" }}
+              >
+                - Capgemini Research Institute
+              </p>
               <h3
                 className="text-lg sm:text-xl text-gray-900 mb-2 sm:mb-3 highlight-hover"
                 style={{
                   fontFamily: "Ubuntu",
-                  background: "linear-gradient(to right, #00E6E3 0%, #00E6E3 100%) no-repeat 0px 100% / 0px 100%",
+                  background:
+                    "linear-gradient(to right, #00E6E3 0%, #00E6E3 100%) no-repeat 0px 100% / 0px 100%",
                   transition: "background-size 0.3s ease-in-out",
                   backgroundSize: "0% 100%",
                 }}
@@ -205,11 +226,16 @@ export default function Hero() {
           {/* Text Block on Desktop: Shifts left and overlays */}
           <div className="relative z-10 order-1 md:order-2 hidden md:block">
             <div className="bg-white shadow-xl p-4 sm:p-5 w-full md:w-[110%] lg:w-[90%] -mt-6 sm:-mt-8 md:-mt-0 md:-ml-10 lg:-ml-20 xl:-ml-32">
-              <p className="text-xs font-extralight mb-2 sm:mb-3 px-3 sm:px-5">- Capgemini Research Institute</p>
+              <p className="text-xs font-extralight mb-2 sm:mb-3 px-3 sm:px-5">
+                - Capgemini Research Institute
+              </p>
               <h3 className="md:text-xl lg:text-2xl  text-gray-900 mb-2 sm:mb-3 px-3 sm:px-5 highlight-hover">
                 Global youth and sustainability
               </h3>
-              <Link href="#" className="text-blue-600 px-3 sm:px-5 text-xs sm:text-sm">
+              <Link
+                href="#"
+                className="text-blue-600 px-3 sm:px-5 text-xs sm:text-sm"
+              >
                 CAPGEMINI RESEARCH INSTITUTE
               </Link>
             </div>
@@ -217,14 +243,14 @@ export default function Hero() {
         </div>
       </section>
 
-
       <section className="w-full px-4 py-8 sm:py-12 bg-white font-poppins mb-3">
         <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-18 items-start relative p-4 sm:p-4 md:p-12">
           {/* Left - Blue Card */}
           <div className="bg-[#0071b9] text-white w-full sm:max-w-[400px] p-6 md:p-10 h-full flex flex-col justify-between min-h-[250px] mx-auto sm:ml-0 md:ml-10 lg:ml-20 relative z-10 order-2 md:order-1">
             <p className="text-sm mb-4">— Capgemini Research Institute</p>
             <h2 className="text-xl sm:text-2xl lg:text-3xl  leading-snug mb-4 highlight-hover">
-              Driving business value with AI agents: A conversation with Dr Walter Sun
+              Driving business value with AI agents: A conversation with Dr
+              Walter Sun
             </h2>
             <Link href="#" className="text-sm mt-auto ">
               CAPGEMINI RESEARCH INSTITUTE
@@ -291,120 +317,20 @@ export default function Hero() {
         </div>
       </section>
 
-
       <section className="w-full py-8 sm:py-12 bg-white">
         <h1 className="text-2xl sm:text-3xl md:text-4xl  text-gray-900 text-center mb-6 sm:mb-8 px-4 max-w-screen-xl mx-auto">
           Recent Client Stories
         </h1>
-
-        {/* Wrap image and content in a full-width div */}
-        <div className="relative flex flex-col md:flex-row md:items-stretch w-full">
-          {/* Image container: full width of viewport */}
-          <div className="relative w-full h-[300px] sm:h-[400px] md:h-[600px]">
-            <Image
-              src="/assets/insight1.webp"
-              alt="Sailing Wealth"
-              fill
-              className="object-cover object-center w-full h-full"
-              priority
-            />
-
-            {/* Slider controls over image */}
-            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex items-center gap-4 bg-white px-6 py-3 rounded-full shadow-lg z-20">
-              <button className="text-gray-400 hover:text-black transition text-2xl">←</button>
-              {[0, 1, 2, 3, 4].map((_, idx) => (
-                <span
-                  key={idx}
-                  className={`w-2.5 h-2.5 rounded-full transition ${idx === 0 ? "bg-black" : "bg-gray-300"
-                    }`}
-                ></span>
-              ))}
-              <button className="text-gray-400 hover:text-black transition text-2xl">→</button>
-            </div>
-
-            {/* Overlay content on image */}
-            <div className="hidden md:block absolute bottom-0 left-16 bg-white shadow-xl w-[450px] p-8 z-30">
-              <h3 className="text-2xl text-gray-900 mb-4 ">
-                ABN AMRO adopts a future-focused approach to Gen AI development
-              </h3>
-              <p className="text-base font-light mb-6">
-                Working with Capgemini as its project partner, the bank transitions to Microsoft Copilot and launches a new
-                Gen AI factory approach to become a personal bank in the digital age
-              </p>
-              <Link
-                href="#"
-                className="
-            group relative inline-flex items-center
-            px-5 py-3
-            rounded-full border border-gray-900
-            text-gray-900 text-sm font-medium
-            overflow-hidden
-            transition-all duration-300 ease-in-out
-            transform group-hover:scale-105
-            group-hover:border-blue-200
-          "
-              >
-                <span
-                  className="
-              absolute inset-0
-              w-0 group-hover:w-full
-              bg-teal-300 
-              rounded-full
-              transition-all duration-500 ease-out
-              z-0
-            "
-                />
-                <span className="relative z-10 transition-colors duration-300 group-hover:text-black">
-                  Read more <span className="ml-2">→</span>
-                </span>
-              </Link>
-            </div>
-          </div>
-
-          <div className="block md:hidden mt-6 bg-white shadow-xl black p-6 max-w-screen-xl mx-auto w-full">
-            <h3 className="text-xl text-gray-900 mb-3  highlight-hover">
-              ABN AMRO adopts a future-focused approach to Gen AI development
-            </h3>
-            <p className="text-sm font-light mb-4">
-              Working with Capgemini as its project partner, the bank transitions to Microsoft Copilot and launches a new Gen AI factory approach to become a personal bank in the digital age
-            </p>
-            <Link
-              href="#"
-              className="
-          group relative inline-flex items-center
-          px-4 py-2
-          rounded-full border border-gray-900
-          text-gray-900 text-sm font-medium
-          overflow-hidden
-          transition-all duration-300 ease-in-out
-          transform group-hover:scale-105
-          group-hover:border-blue-200
-        "
-            >
-              <span
-                className="
-            absolute inset-0
-            w-0 group-hover:w-full
-            bg-teal-300
-            rounded-full
-            transition-all duration-500 ease-out
-            z-0
-          "
-              />
-              <span className="relative z-10 transition-colors duration-300 group-hover:text-black">
-                Read more <span className="ml-2">→</span>
-              </span>
-            </Link>
-          </div>
-        </div>
+        {/* Calling Client Stories Slider */}
+        <ClientStoriesSlider />
       </section>
-
-
 
       {/* Latest news */}
       <section className="w-full px-4 sm:px-6 md:px-10 py-8 sm:py-12 bg-white">
         <div className="max-w-screen-xl mx-auto md:px-18 px-4">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl  text-gray-900 mb-6 sm:mb-8">Latest news</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl  text-gray-900 mb-6 sm:mb-8">
+            Latest news
+          </h2>
 
           <div
             className="grid grid-cols-1 md:grid-cols-[30%_60%] sm:gap-8 md:gap-10"
@@ -414,8 +340,9 @@ export default function Hero() {
             <div className="border-b border-[#0d414793] md:border-none md:col-span-1 pb-6 md:pb-0 ">
               <p className="text-sm text-black mb-2">— Sponsorship news</p>
               <h2 className="text-xl sm:text-2xl md:text-3xl font-medium mb-2 highlight-hover">
-                Capgemini becomes an Official Partner of the Tour de France and Tour de France Femmes avec Zwift until
-                2029 to power cycling through tech and innovation
+                Capgemini becomes an Official Partner of the Tour de France and
+                Tour de France Femmes avec Zwift until 2029 to power cycling
+                through tech and innovation
               </h2>
               <p className="text-sm text-black">Jun 5, 2025</p>
             </div>
@@ -426,7 +353,8 @@ export default function Hero() {
               <div className="border-b pb-4">
                 <p className="text-sm text-black mb-1">— Reports</p>
                 <h4 className="text-2xl sm:text-md text-black font-medium mb-10 highlight-hover">
-                  North America high-net-worth individual population surges, while Europe and Middle East shrink
+                  North America high-net-worth individual population surges,
+                  while Europe and Middle East shrink
                 </h4>
                 <p className="text-sm text-black">Jun 4, 2025</p>
               </div>
@@ -435,8 +363,8 @@ export default function Hero() {
               <div className="border-b pb-4">
                 <p className="text-sm text-black mb-1">— Partners</p>
                 <h4 className="text-2xl sm:text-md text-black font-medium mb-10 highlight-hover">
-                  Capgemini, Mistral AI and SAP combine forces to offer secure, scalable gen AI-powered solutions for
-                  regulated industries
+                  Capgemini, Mistral AI and SAP combine forces to offer secure,
+                  scalable gen AI-powered solutions for regulated industries
                 </h4>
                 <p className="text-sm text-black">May 26, 2025</p>
               </div>
@@ -445,14 +373,13 @@ export default function Hero() {
               <div className="border-b pb-4">
                 <p className="text-sm text-black mb-1">— Reports</p>
                 <h4 className="text-2xl sm:text-md text-black font-medium mb-10 highlight-hover">
-                  Nine in ten public sector organizations to focus on agentic AI in the next 2-3 years, but data
-                  readiness is still a challenge
+                  Nine in ten public sector organizations to focus on agentic AI
+                  in the next 2-3 years, but data readiness is still a challenge
                 </h4>
                 <p className="text-sm text-black">May 20, 2025</p>
               </div>
             </div>
           </div>
-
 
           {/* See All News Button */}
           <div className="mt-6 sm:mt-8 md:mt-10 ">
@@ -482,15 +409,15 @@ export default function Hero() {
               </span>
             </button>
           </div>
-
-
         </div>
       </section>
 
       {/* Inside Stories Section */}
       <section className="w-full px-4 sm:px-6 py-8 sm:py-12 bg-white ">
         <div className="max-w-screen-xl mx-auto md:px-15 sm:px-4">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-normal text-gray-900 mb-6 sm:mb-8">Inside stories</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-normal text-gray-900 mb-6 sm:mb-8">
+            Inside stories
+          </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Left Main Story */}
@@ -502,11 +429,15 @@ export default function Hero() {
                   className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-120"
                 />
               </div>
-              <p className="text-sm text-black mb-1">— Future-shaping projects</p>
+              <p className="text-sm text-black mb-1">
+                — Future-shaping projects
+              </p>
               <h3 className="text-2xl sm:text-xl md:text-2xl font-medium text-black mb-3 highlight-hover ">
                 Tech lessons for positive futures
               </h3>
-              <p className="text-mdtext-gray-600">The lasting value of a team tech challenge</p>
+              <p className="text-mdtext-gray-600">
+                The lasting value of a team tech challenge
+              </p>
             </div>
 
             {/* Right Side Stories */}
@@ -521,8 +452,12 @@ export default function Hero() {
                   />
                 </div>
                 <p className="text-sm text-black mb-1">— Life at Capgemini</p>
-                <h4 className="text-sm sm:text-md md:text-2xl font-medium text-black mb-1 highlight-hover">New career, new you</h4>
-                <p className="text-md text-gray-600">Changing careers to change your life</p>
+                <h4 className="text-sm sm:text-md md:text-2xl font-medium text-black mb-1 highlight-hover">
+                  New career, new you
+                </h4>
+                <p className="text-md text-gray-600">
+                  Changing careers to change your life
+                </p>
               </div>
 
               {/* Story 2 */}
@@ -538,7 +473,9 @@ export default function Hero() {
                 <h4 className="text-sm sm:text-md md:text-xl font-medium text-black mb-1 highlight-hover">
                   A forum for sustainability
                 </h4>
-                <p className="text-md text-gray-600 font-light">Getting the sustainability message heard by world leaders</p>
+                <p className="text-md text-gray-600 font-light">
+                  Getting the sustainability message heard by world leaders
+                </p>
               </div>
             </div>
           </div>
@@ -595,30 +532,41 @@ export default function Hero() {
 
           {/* Slider - visible only on mobile, bottom of image */}
           <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 flex items-center gap-4 bg-white px-6 py-3 rounded-full shadow-lg z-20 md:hidden">
-            <button className="text-gray-400 hover:text-black transition text-2xl">&lt;</button>
+            <button className="text-gray-400 hover:text-black transition text-2xl">
+              &lt;
+            </button>
             {[0, 1, 2, 3, 4].map((_, idx) => (
               <span
                 key={idx}
-                className={`w-2.5 h-2.5 rounded-full transition ${idx === 0 ? "bg-black" : "bg-gray-300"}`}
+                className={`w-2.5 h-2.5 rounded-full transition ${
+                  idx === 0 ? "bg-black" : "bg-gray-300"
+                }`}
               ></span>
             ))}
-            <button className="text-gray-400 hover:text-black transition text-2xl">&gt;</button>
+            <button className="text-gray-400 hover:text-black transition text-2xl">
+              &gt;
+            </button>
           </div>
         </div>
 
         {/* Slider for md+ (normal position) */}
         <div className="hidden md:flex absolute bottom-6 left-1/2 transform -translate-x-1/2 items-center gap-4 bg-white px-6 py-3 rounded-full shadow-lg z-10">
-          <button className="text-gray-400 hover:text-black transition text-2xl">&lt;</button>
+          <button className="text-gray-400 hover:text-black transition text-2xl">
+            &lt;
+          </button>
           {[0, 1, 2, 3, 4].map((_, idx) => (
             <span
               key={idx}
-              className={`w-2.5 h-2.5 rounded-full transition ${idx === 0 ? "bg-black" : "bg-gray-300"}`}
+              className={`w-2.5 h-2.5 rounded-full transition ${
+                idx === 0 ? "bg-black" : "bg-gray-300"
+              }`}
             ></span>
           ))}
-          <button className="text-gray-400 hover:text-black transition text-2xl">&gt;</button>
+          <button className="text-gray-400 hover:text-black transition text-2xl">
+            &gt;
+          </button>
         </div>
       </section>
-
     </>
-  )
+  );
 }
