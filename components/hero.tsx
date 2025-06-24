@@ -2,6 +2,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import Header from "./header"
+import ClientStoriesSlider from "./clientStories"
 
 export default function Hero() {
   return (
@@ -25,7 +26,7 @@ export default function Hero() {
     h-[300px]
     bg-gradient-to-br from-[#007bbdE6] to-[#003f61E6]
     rounded-md shadow-2xs
-    p-[32px] 
+    p-[32px]
     z-10
     flex flex-col justify-center gap-4
   "
@@ -34,10 +35,10 @@ export default function Hero() {
 
           <h1
             className="
-    text-3xl sm:text-3xl md:text-4xl 
-    text-white 
-    text-[clamp(2rem, 4vw, 4rem)] 
-    font-bold mb-4 
+    text-3xl sm:text-3xl md:text-4xl
+    text-white
+    text-[clamp(2rem, 4vw, 4rem)]
+    font-bold mb-4
     transition-all duration-300
     group relative inline-block
   "
@@ -79,11 +80,11 @@ export default function Hero() {
           {/* Image Block (Right Side) */}
           <div
             className="
-        relative 
+        relative
         w-[300px] h-[300px] md:w-[528px] md:h-[380px]
-        overflow-hidden group 
-        order-1 md:order-2 
-        border-2 border-black 
+        overflow-hidden group
+        order-1 md:order-2
+        border-2 border-black
         hover:border-none
         sm:border-none
       "
@@ -132,12 +133,12 @@ export default function Hero() {
                 <Link
                   href="#"
                   className="
-              group relative inline-flex items-center 
-              px-4 sm:px-6 py-2 
-              rounded-full border border-gray-900 
-              text-gray-900 font-medium 
-              overflow-hidden transition-all duration-300 ease-in-out 
-              transform group-hover:scale-105 
+              group relative inline-flex items-center
+              px-4 sm:px-6 py-2
+              rounded-full border border-gray-900
+              text-gray-900 font-medium
+              overflow-hidden transition-all duration-300 ease-in-out
+              transform group-hover:scale-105
               group-hover:border-blue-200
               "
                 >
@@ -292,114 +293,13 @@ export default function Hero() {
       </section>
 
 
-      <section className="w-full py-8 sm:py-12 bg-white">
-        <h1 className="text-2xl sm:text-3xl md:text-4xl  text-gray-900 text-center mb-6 sm:mb-8 px-4 max-w-screen-xl mx-auto">
-          Recent Client Stories
-        </h1>
-
-        {/* Wrap image and content in a full-width div */}
-        <div className="relative flex flex-col md:flex-row md:items-stretch w-full">
-          {/* Image container: full width of viewport */}
-          <div className="relative w-full h-[300px] sm:h-[400px] md:h-[600px]">
-            <Image
-              src="/assets/insight1.webp"
-              alt="Sailing Wealth"
-              fill
-              className="object-cover object-center w-full h-full"
-              priority
-            />
-
-            {/* Slider controls over image */}
-            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex items-center gap-4 bg-white px-6 py-3 rounded-full shadow-lg z-20">
-              <button className="text-gray-400 hover:text-black transition text-2xl">←</button>
-              {[0, 1, 2, 3, 4].map((_, idx) => (
-                <span
-                  key={idx}
-                  className={`w-2.5 h-2.5 rounded-full transition ${idx === 0 ? "bg-black" : "bg-gray-300"
-                    }`}
-                ></span>
-              ))}
-              <button className="text-gray-400 hover:text-black transition text-2xl">→</button>
-            </div>
-
-            {/* Overlay content on image */}
-            <div className="hidden md:block absolute bottom-0 left-16 bg-white shadow-xl w-[450px] p-8 z-30">
-              <h3 className="text-2xl text-gray-900 mb-4 ">
-                ABN AMRO adopts a future-focused approach to Gen AI development
-              </h3>
-              <p className="text-base font-light mb-6">
-                Working with Capgemini as its project partner, the bank transitions to Microsoft Copilot and launches a new
-                Gen AI factory approach to become a personal bank in the digital age
-              </p>
-              <Link
-                href="#"
-                className="
-            group relative inline-flex items-center
-            px-5 py-3
-            rounded-full border border-gray-900
-            text-gray-900 text-sm font-medium
-            overflow-hidden
-            transition-all duration-300 ease-in-out
-            transform group-hover:scale-105
-            group-hover:border-blue-200
-          "
-              >
-                <span
-                  className="
-              absolute inset-0
-              w-0 group-hover:w-full
-              bg-teal-300 
-              rounded-full
-              transition-all duration-500 ease-out
-              z-0
-            "
-                />
-                <span className="relative z-10 transition-colors duration-300 group-hover:text-black">
-                  Read more <span className="ml-2">→</span>
-                </span>
-              </Link>
-            </div>
-          </div>
-
-          <div className="block md:hidden mt-6 bg-white shadow-xl black p-6 max-w-screen-xl mx-auto w-full">
-            <h3 className="text-xl text-gray-900 mb-3  highlight-hover">
-              ABN AMRO adopts a future-focused approach to Gen AI development
-            </h3>
-            <p className="text-sm font-light mb-4">
-              Working with Capgemini as its project partner, the bank transitions to Microsoft Copilot and launches a new Gen AI factory approach to become a personal bank in the digital age
-            </p>
-            <Link
-              href="#"
-              className="
-          group relative inline-flex items-center
-          px-4 py-2
-          rounded-full border border-gray-900
-          text-gray-900 text-sm font-medium
-          overflow-hidden
-          transition-all duration-300 ease-in-out
-          transform group-hover:scale-105
-          group-hover:border-blue-200
-        "
-            >
-              <span
-                className="
-            absolute inset-0
-            w-0 group-hover:w-full
-            bg-teal-300
-            rounded-full
-            transition-all duration-500 ease-out
-            z-0
-          "
-              />
-              <span className="relative z-10 transition-colors duration-300 group-hover:text-black">
-                Read more <span className="ml-2">→</span>
-              </span>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-
+ <section className="w-full py-8 sm:py-12 bg-white">
+  <h1 className="text-2xl sm:text-3xl md:text-4xl  text-gray-900 text-center mb-6 sm:mb-8 px-4 max-w-screen-xl mx-auto">
+    Recent Client Stories
+  </h1>
+  {/* Calling Client Stories Slider */}
+  <ClientStoriesSlider/>
+</section>
 
       {/* Latest news */}
       <section className="w-full px-4 sm:px-6 md:px-10 py-8 sm:py-12 bg-white">
