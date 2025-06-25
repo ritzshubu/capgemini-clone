@@ -1,7 +1,7 @@
-"use client"
-import Image from "next/image"
-import Link from "next/link"
-import Header from "./header"
+"use client";
+import Image from "next/image";
+import Link from "next/link";
+import Header from "./header";
 
 export default function Hero() {
   return (
@@ -12,19 +12,19 @@ export default function Hero() {
       </div>
 
       {/* Hero Section */}
-      <section className=" top-0 left-0 w-full h-screen bg-white">
-        <img src="/assets/DigitalBanner.webp" alt="bg" className="absolute inset-0 w-full h-2/3 lg:h-full object-cover" />
+      <section className="top-0 left-0 w-full h-screen bg-white">
+        <img
+          src="/assets/DigitalBanner.webp"
+          alt="bg"
+          className="absolute inset-0 w-full h-2/3 lg:h-full object-cover"
+        />
         {/* Overlay Content Card */}
         <div
           className="
-    absolute
-    bottom-[40px] md:bottom-[20px] lg:bottom-[60px]
-    left-1/2 md:left-[30px]
-    -translate-x-1/2 md:translate-x-0
-    w-[90%] sm:w-3/4 md:w-2/3 lg:w-1/2
-    h-[300px]
-    bg-gradient-to-br from-[#007bbdE6] to-[#003f61E6]
-    rounded-md shadow-2xs
+            absolute
+            bottom-[40px] md:bottom-[20px] lg:bottom-[60px]
+            left-1/2 md:left-[30px]
+            -translate-x-1/2 md:translate-x-0
     p-[32px] 
     z-10
     flex flex-col justify-center gap-4
@@ -215,78 +215,78 @@ export default function Hero() {
 
 
       <section className="w-full bg-white font-Ubuntu">
-  {/* Section Heading */}
-  <h2 className="text-2xl sm:text-3xl md:text-4xl text-gray-900 px-4 sm:px-6 max-w-screen-xl mx-auto mb-8">
-    Recent client stories
-  </h2>
+        {/* Section Heading */}
+        <h2 className="text-2xl sm:text-3xl md:text-4xl text-gray-900 px-4 sm:px-6 max-w-screen-xl mx-auto mb-8">
+          Recent client stories
+        </h2>
 
-  {/* Image and overlays */}
-  <div className="relative w-full h-[400px] sm:h-[450px] md:h-[500px] overflow-hidden">
-    {/* Background Image */}
-    <Image
-      src="/assets/insight1.webp"
-      alt="Client Story"
-      fill
-      className="object-cover object-center w-full h-full"
-      priority
-    />
+        {/* Image and overlays */}
+        <div className="relative w-full h-[400px] sm:h-[450px] md:h-[500px] overflow-hidden">
+          {/* Background Image */}
+          <Image
+            src="/assets/insight1.webp"
+            alt="Client Story"
+            fill
+            className="object-cover object-center w-full h-full"
+            priority
+          />
 
-    {/* Slider Dots */}
-    <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-10 flex items-center gap-4 bg-white px-6 py-3 rounded-full shadow-md">
-      <button className="text-xl text-gray-400 hover:text-black">←</button>
-      {[0, 1, 2].map((dot, idx) => (
-        <span
-          key={idx}
-          className={`w-2.5 h-2.5 rounded-full ${idx === 0 ? "bg-black" : "bg-gray-300"}`}
-        />
-      ))}
-      <button className="text-xl text-gray-400 hover:text-black">→</button>
-    </div>
-  </div>
+          {/* Slider Dots */}
+          <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-10 flex items-center gap-4 bg-white px-6 py-3 rounded-full shadow-md">
+            <button className="text-xl text-gray-400 hover:text-black">←</button>
+            {[0, 1, 2].map((dot, idx) => (
+              <span
+                key={idx}
+                className={`w-2.5 h-2.5 rounded-full ${idx === 0 ? "bg-black" : "bg-gray-300"}`}
+              />
+            ))}
+            <button className="text-xl text-gray-400 hover:text-black">→</button>
+          </div>
+        </div>
 
-  {/* ⬇️ Desktop Text Box (adjusted for better vertical balance) */}
-<div className="relative hidden md:flex justify-start px-4 sm:px-6 -mt-[260px] z-20">
-  <div className="bg-white shadow-xl w-full max-w-xl p-10">
-    <h3 className="text-2xl text-black mb-4 font-semibold leading-snug">
-      Refreshing data migration for Coca-Cola Bottlers Japan
-    </h3>
-    <p className="text-gray-800 text-base font-light leading-relaxed mb-6">
-      Working with a collaborative team drawn from Capgemini and its partners
-      Microsoft, and NetApp, Coca-Cola Bottlers Japan performs one of the
-      largest cloud-based SAP data migrations in the world in less than six months.
-    </p>
-    <Link
-      href="#"
-      className="group relative inline-flex items-center px-6 py-2 border border-black rounded-full text-sm font-medium text-black overflow-hidden transition-all duration-300 group-hover:scale-105"
-    >
-      <span className="absolute inset-0 w-0 group-hover:w-full bg-teal-300 transition-all duration-500 ease-out rounded-full z-0" />
-      <span className="relative z-10 group-hover:text-black">Read more →</span>
-    </Link>
-  </div>
-</div>
+        {/* Desktop Text Box */}
+        <div className="relative hidden md:flex justify-start px-4 sm:px-6 -mt-[260px] z-20">
+          <div className="bg-white shadow-xl w-full max-w-xl p-10">
+            <h3 className="text-2xl text-black mb-4 font-semibold leading-snug">
+              Refreshing data migration for Coca-Cola Bottlers Japan
+            </h3>
+            <p className="text-gray-800 text-base font-light leading-relaxed mb-6">
+              Working with a collaborative team drawn from Capgemini and its partners
+              Microsoft, and NetApp, Coca-Cola Bottlers Japan performs one of the
+              largest cloud-based SAP data migrations in the world in less than six months.
+            </p>
+            <Link
+              href="#"
+              className="group relative inline-flex items-center px-6 py-2 border border-black rounded-full text-sm font-medium text-black overflow-hidden transition-all duration-300 group-hover:scale-105"
+            >
+              <span className="absolute inset-0 w-0 group-hover:w-full bg-teal-300 transition-all duration-500 ease-out rounded-full z-0" />
+              <span className="relative z-10 group-hover:text-black">Read more →</span>
+            </Link>
+          </div>
+        </div>
 
 
-  {/* ⬇️ Mobile Text Card (separate section) */}
-  <div className="block md:hidden px-5 -mt-4 z-10 relative">
-    <div className="bg-white shadow-xl px-4 pt-6 pb-8">
-      <h3 className="text-xl font-semibold text-black mb-3">
-        Refreshing data migration for Coca-Cola Bottlers Japan
-      </h3>
-      <p className="text-gray-800 text-sm leading-relaxed mb-4">
-        Working with a collaborative team drawn from Capgemini and its partners
-        Microsoft, and NetApp, Coca-Cola Bottlers Japan performs one of the
-        largest cloud-based SAP data migrations in the world in less than six months.
-      </p>
-      <Link
-        href="#"
-        className="group relative inline-flex items-center px-5 py-2 border border-black rounded-full text-sm font-medium text-black overflow-hidden transition-all duration-300 group-hover:scale-105"
-      >
-        <span className="absolute inset-0 w-0 group-hover:w-full bg-teal-300 transition-all duration-500 ease-out z-0" />
-        <span className="relative z-10 group-hover:text-black">Read more →</span>
-      </Link>
-    </div>
-  </div>
-</section>
+        {/* ⬇️ Mobile Text Card (separate section) */}
+        <div className="block md:hidden px-5 -mt-4 z-10 relative">
+          <div className="bg-white shadow-xl px-4 pt-6 pb-8">
+            <h3 className="text-xl font-semibold text-black mb-3">
+              Refreshing data migration for Coca-Cola Bottlers Japan
+            </h3>
+            <p className="text-gray-800 text-sm leading-relaxed mb-4">
+              Working with a collaborative team drawn from Capgemini and its partners
+              Microsoft, and NetApp, Coca-Cola Bottlers Japan performs one of the
+              largest cloud-based SAP data migrations in the world in less than six months.
+            </p>
+            <Link
+              href="#"
+              className="group relative inline-flex items-center px-5 py-2 border border-black rounded-full text-sm font-medium text-black overflow-hidden transition-all duration-300 group-hover:scale-105"
+            >
+              <span className="absolute inset-0 w-0 group-hover:w-full bg-teal-300 transition-all duration-500 ease-out z-0" />
+              <span className="relative z-10 group-hover:text-black">Read more →</span>
+            </Link>
+          </div>
+        </div>
+      </section>
 
 
 
