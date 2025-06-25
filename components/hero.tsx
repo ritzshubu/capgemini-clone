@@ -25,6 +25,9 @@ export default function Hero() {
             bottom-[40px] md:bottom-[20px] lg:bottom-[60px]
             left-1/2 md:left-[30px]
             -translate-x-1/2 md:translate-x-0
+            bg-gradient-to-br from-[#007bbdE6] to-[#003f61E6]
+    rounded-md shadow-2xs
+   sm:p-8 md:p-10
     p-[32px] 
     z-10
     flex flex-col justify-center gap-4
