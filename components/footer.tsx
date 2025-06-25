@@ -88,9 +88,9 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="max-w-screen-xl mx-auto w-full px-16 py-6 flex flex-col md:flex-row items-center md:justify-between gap-4 md:gap-0">
+      <div className="max-w-screen-xl mx-auto w-full px-4 sm:px-8 md:px-16 py-6 sm:py-8 flex flex-col md:flex-row items-center md:justify-between gap-4 md:gap-0">
         {/* Social Icons*/}
-        <div className="flex justify-center md:justify-end space-x-4 order-1 md:order-2">
+        <div className="flex w-full justify-center md:justify-end space-x-4 order-1 md:order-2 mb-2 md:mb-0">
           {[
             { src: "/assets/fb.svg", alt: "Facebook" },
             { src: "/assets/twit.svg", alt: "Twitter" },
@@ -107,8 +107,7 @@ export default function Footer() {
               <div className="relative w-10 h-10 rounded-full overflow-hidden border border-black hover:border-[#0e89e7] transition-colors duration-200 group-hover:scale-110 ease-in-out">
                 {/* Circular expanding background */}
                 <div
-                  className="absolute inset-0 bg-[#0e89e7] rounded-full scale-0 group-hover:scale-100 transition-transform duration-500 ease-out z-0
-          "
+                  className="absolute inset-0 bg-[#0e89e7] rounded-full scale-0 group-hover:scale-100 transition-transform duration-500 ease-out z-0"
                   style={{ transformOrigin: "-60% 70%" }}
                 />
 
@@ -122,7 +121,7 @@ export default function Footer() {
         </div>
 
         {/* Copyright*/}
-        <div className="text-center text-[14px] text-[#0d4147] order-2 md:order-1">
+        <div className="text-center text-[14px] text-[#0d4147] order-2 md:order-1 w-full md:w-auto">
           © 2025 Capgemini. All rights reserved.
         </div>
       </div>

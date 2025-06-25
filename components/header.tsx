@@ -48,7 +48,7 @@ export default function Header() {
 
   return (
     <header
-      className={`w-full fixed top-0 z-50 py-3 transition-all duration-300 ${
+      className={`w-full fixed top-0 z-50 py-2 sm:py-3 transition-all duration-300 ${
         isScrolled || menuOpen ? "bg-white" : "bg-transparent"
       }`}
       onMouseEnter={() => setMenuOpen(true)}
@@ -56,11 +56,11 @@ export default function Header() {
       style={{
         backgroundColor: isScrolled || menuOpen ? "#fff" : undefined,
         transition: "background-color 0.2s, padding 0.3s",
-        paddingTop: isScrolled ? "0" : "1rem",
-        paddingBottom: isScrolled ? "0" : "1rem",
+        paddingTop: isScrolled ? "0" : "0.5rem",
+        paddingBottom: isScrolled ? "0" : "0.5rem",
       }}
     >
-      <div className="max-w-screen-2xl mx-auto px-4 lg:px-8">
+      <div className="max-w-screen-2xl mx-auto px-2 sm:px-4 lg:px-8">
         {/* Top Bar */}
         <div className="hidden lg:flex justify-end space-x-6 text-sm text-gray-900 font-medium">
           <div
@@ -100,15 +100,15 @@ export default function Header() {
 
         {/* Main Header */}
         <div
-          className="w-full flex items-center justify-between py-3"
+          className="w-full flex items-center justify-between py-2 sm:py-3"
           style={{
-            paddingLeft: "12px",
-            paddingRight: "12px",
+            paddingLeft: "6px",
+            paddingRight: "6px",
             transform: "translateY(-10px)",
           }}
         >
           {/* Logo + Nav */}
-          <div className="flex items-center gap-12">
+          <div className="flex items-center gap-4 sm:gap-8 lg:gap-12">
             <Link href="/">
               <Image
                 src={
@@ -117,14 +117,14 @@ export default function Header() {
                     : "https://www.capgemini.com/wp-content/themes/capgemini2020/assets/images/logo-white.svg"
                 }
                 alt="Capgemini Logo"
-                width={180}
-                height={45}
+                width={140}
+                height={40}
                 priority
               />
             </Link>
 
             <nav
-              className={`hidden lg:flex space-x-8 text-[15px] font-medium transition-colors duration-200 ${
+              className={`hidden lg:flex space-x-4 sm:space-x-8 text-[15px] font-medium transition-colors duration-200 ${
                 isScrolled || menuOpen ? "text-gray-900" : "text-white"
               }`}
               style={{ fontFamily: "Ubuntu" }}
@@ -145,9 +145,9 @@ export default function Header() {
                   </Link>
                   {/* Dropdown */}
                   {item.dropdown && hoveredIndex === index && (
-                    <div className="absolute top-full left-0 w-[600px] bg-white text-black shadow-lg p-6 mt-3 flex z-40">
+                    <div className="absolute top-full left-0 w-full max-w-[95vw] sm:w-[400px] md:w-[600px] bg-white text-black shadow-lg p-6 mt-3 flex z-40">
                       {/* Left Sidebar */}
-                      <div className="w-1/3 pr-6 border-r">
+                      <div className="w-1/3 pr-6 border-r hidden md:block">
                         <h4 className="font-bold text-lg mb-2">Insights</h4>
                         <p className="text-sm text-gray-600">
                           Explore our latest thought leadership, ideas, and
@@ -155,7 +155,7 @@ export default function Header() {
                         </p>
                       </div>
                       {/* Right Options */}
-                      <div className="grid gap-3 text-sm">
+                      <div className="grid gap-3 text-sm w-full md:w-2/3">
                         {item.dropdown.map((option, idx) => (
                           <Link
                             key={idx}
@@ -219,6 +219,33 @@ export default function Header() {
         {menuOpen && (
           <div className="lg:hidden py-4 border-t text-sm font-medium text-gray-900 space-y-3 bg-white">
             <hr />
+            {/* Mobile Nav Items */}
+            <div className="flex flex-col gap-2 mb-2">
+              {navItems.map((item, idx) => (
+                <div key={idx} className="relative">
+                  <Link
+                    href="#"
+                    className="block px-2 py-2 hover:text-[#0070ad] font-medium"
+                  >
+                    {item.label}
+                  </Link>
+                  {/* Show dropdown options for Insights on mobile */}
+                  {item.dropdown && (
+                    <div className="pl-4 flex flex-col gap-1 mt-1">
+                      {item.dropdown.map((option, oidx) => (
+                        <Link
+                          key={oidx}
+                          href="#"
+                          className="block px-2 py-1 text-[15px] text-gray-700 hover:text-[#0070ad]"
+                        >
+                          {option}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
             {topRightItems.map((item, index) => (
               <Link
                 key={index}

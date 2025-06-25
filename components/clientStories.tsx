@@ -28,18 +28,17 @@ export default function ClientStoriesSlider() {
 
   return (
     <div className="relative flex flex-col md:flex-row md:items-stretch w-full">
-      <div className="relative w-full h-[300px] sm:h-[400px] md:h-[600px] overflow-hidden">
+      <div className="relative w-full min-h-[220px] h-[40vh] sm:h-[350px] md:h-[500px] lg:h-[600px] max-h-[80vh] overflow-hidden">
         <div
-          className="absolute inset-0 w-full h-full transition-transform duration-700 ease-in-out"
+          className="absolute inset-0 w-full h-full transition-transform duration-700 ease-in-out flex"
           style={{
             transform: `translateX(-${current * 100}%)`,
-            display: "flex",
           }}
         >
           {stories.map((s, idx) => (
             <div
               key={idx}
-              className="relative w-full h-[300px] sm:h-[400px] md:h-[600px] flex-shrink-0"
+              className="relative w-full min-h-[220px] h-[40vh] sm:h-[350px] md:h-[500px] lg:h-[600px] max-h-[80vh] flex-shrink-0"
               style={{ flex: "0 0 100%" }}
             >
               <Image
@@ -50,14 +49,18 @@ export default function ClientStoriesSlider() {
                 priority={idx === current}
               />
               {idx === current && (
-                <div className="hidden md:block absolute bottom-0 left-16 bg-white shadow-xl w-[450px] p-8 z-30">
-                  <h3 className="text-2xl text-gray-900 mb-4 ">{s.heading}</h3>
-                  <p className="text-base font-light mb-6">{s.paragraph}</p>
+                <div className="hidden md:block absolute bottom-0 left-4 md:left-16 bg-white shadow-xl w-[90vw] max-w-[450px] p-4 md:p-8 z-30 rounded-md">
+                  <h3 className="text-xl md:text-2xl text-gray-900 mb-2 md:mb-4 ">
+                    {s.heading}
+                  </h3>
+                  <p className="text-sm md:text-base font-light mb-4 md:mb-6">
+                    {s.paragraph}
+                  </p>
                   <Link
                     href={s.link}
                     className="
               group relative inline-flex items-center
-              px-5 py-3
+              px-4 md:px-5 py-2 md:py-3
               rounded-full border border-gray-900
               text-gray-900 text-sm font-medium
               overflow-hidden
@@ -85,9 +88,9 @@ export default function ClientStoriesSlider() {
             </div>
           ))}
         </div>
-        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex items-center gap-4 bg-white px-6 py-3 rounded-full shadow-lg z-20">
+        <div className="absolute bottom-2 sm:bottom-4 left-1/2 transform -translate-x-1/2 flex items-center gap-2 sm:gap-4 bg-white px-3 sm:px-6 py-2 sm:py-3 rounded-full shadow-lg z-20">
           <button
-            className="cursor-pointer text-gray-400 hover:text-[#20c997] transition text-2xl rounded-full hover:bg-[#20c997]/20 w-10 h-10 flex items-center justify-center"
+            className="cursor-pointer text-gray-400 hover:text-[#20c997] transition text-xl sm:text-2xl rounded-full hover:bg-[#20c997]/20 w-8 sm:w-10 h-8 sm:h-10 flex items-center justify-center"
             onClick={prev}
             aria-label="Previous slide"
             type="button"
@@ -97,13 +100,13 @@ export default function ClientStoriesSlider() {
           {stories.map((_, idx) => (
             <span
               key={idx}
-              className={`w-2.5 h-2.5 rounded-full transition ${
+              className={`w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full transition ${
                 idx === current ? "bg-black" : "bg-gray-300"
               }`}
             ></span>
           ))}
           <button
-            className="cursor-pointer text-gray-400 hover:text-[#20c997] transition text-2xl rounded-full hover:bg-[#20c997]/20 w-10 h-10 flex items-center justify-center"
+            className="cursor-pointer text-gray-400 hover:text-[#20c997] transition text-xl sm:text-2xl rounded-full hover:bg-[#20c997]/20 w-8 sm:w-10 h-8 sm:h-10 flex items-center justify-center"
             onClick={next}
             aria-label="Next slide"
             type="button"
@@ -112,18 +115,20 @@ export default function ClientStoriesSlider() {
           </button>
         </div>
       </div>
-      <div className="block md:hidden mt-6 bg-white shadow-xl black p-6 max-w-screen-xl mx-auto w-full">
-        <h3 className="text-xl text-gray-900 mb-3  highlight-hover">
+      <div className="block md:hidden mt-4 sm:mt-6 bg-white shadow-xl black p-4 sm:p-6 max-w-screen-xl mx-auto w-full rounded-md">
+        <h3 className="text-lg sm:text-xl text-gray-900 mb-2 sm:mb-3  highlight-hover">
           {story.heading}
         </h3>
-        <p className="text-sm font-light mb-4">{story.paragraph}</p>
+        <p className="text-xs sm:text-sm font-light mb-2 sm:mb-4">
+          {story.paragraph}
+        </p>
         <Link
           href={story.link}
           className="
             group relative inline-flex items-center
-            px-4 py-2
+            px-3 sm:px-4 py-1.5 sm:py-2
             rounded-full border border-gray-900
-            text-gray-900 text-sm font-medium
+            text-gray-900 text-xs sm:text-sm font-medium
             overflow-hidden
             transition-all duration-300 ease-in-out
             transform group-hover:scale-105

@@ -13,7 +13,7 @@ export default function Hero() {
       </div>
 
       {/* Hero Section */}
-      <section className=" top-0 left-0 w-full h-screen bg-white">
+      <section className="top-0 left-0 w-full min-h-[60vh] h-[80vh] sm:h-[90vh] lg:h-screen bg-white flex items-center justify-center relative">
         <img
           src="/assets/DigitalBanner.webp"
           alt="bg"
@@ -23,24 +23,25 @@ export default function Hero() {
         <div
           className="
     absolute
-    bottom-[40px] md:bottom-[20px] lg:bottom-[60px]
+    bottom-4 sm:bottom-8 md:bottom-10 lg:bottom-16
     left-1/2 md:left-[30px]
     -translate-x-1/2 md:translate-x-0
-    w-[90%] sm:w-3/4 md:w-2/3 lg:w-1/2
-    h-[300px]
+    w-[95%] sm:w-4/5 md:w-2/3 lg:w-1/2
+    max-w-xl
+    h-auto min-h-[180px] sm:min-h-[220px] md:min-h-[260px]
     bg-gradient-to-br from-[#007bbdE6] to-[#003f61E6]
     rounded-md shadow-2xs
-    p-[32px]
+    p-4 sm:p-8 md:p-10
     z-10
     flex flex-col justify-center gap-4
   "
         >
           <h1
             className="
-    text-3xl sm:text-3xl md:text-4xl
+    text-2xl sm:text-3xl md:text-4xl
     text-white
-    text-[clamp(2rem, 4vw, 4rem)]
-    font-bold mb-4
+    text-[clamp(1.5rem,4vw,3rem)]
+    font-bold mb-2 sm:mb-4
     transition-all duration-300
     group relative inline-block
   "
@@ -70,11 +71,10 @@ export default function Hero() {
           </h1>
 
           <p
-            className="text-md font-medium text-white text-[clamp(1rem, 3vw, 1.5rem)] mb-6"
+            className="text-sm sm:text-md md:text-lg font-medium text-white text-[clamp(1rem,2.5vw,1.5rem)] mb-4 sm:mb-6"
             style={{ fontFamily: "Ubuntu" }}
           >
-            How digital continuity drives business outcomes in aerospace and
-            defense
+            How digital continuity drives business outcomes in aerospace and defense
           </p>
         </div>
       </section>
